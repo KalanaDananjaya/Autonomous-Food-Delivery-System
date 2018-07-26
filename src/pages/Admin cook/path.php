@@ -137,7 +137,7 @@ function Pathfinder($List,$_distArr){
 		return $path;
 	}
 	else{
-		echo "null";
+		echo "ZZZ";
 		exit();
 	}
 }
@@ -212,10 +212,20 @@ function directionFinder($data,$route){
 		print_r($direction);
 		echo "</pre>";
 		*/
+		$toSendList = array($direction[0]);
+		for ($i=1; $i < count($direction) ; $i++) { 
+			if ($direction[$i] == "F") {
+				if ($direction[$i - 1] == "F") {
+					array_push($toSendList,"S");
+				}
+			}
+        array_push($toSendList, $direction[$i]);
+    }
         $mystring="";
-        foreach ($direction as $key) {
-           $mystring=$mystring.$key.",";
-        }
+        foreach ($toSendList as $key) {
+           $mystring=$mystring.$key;
+		}
+		//print_r($direction);
         echo $mystring;
         exit();
         

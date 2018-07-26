@@ -12,7 +12,7 @@ function test(){
     }
 }
 document.getElementById("customer").innerHTML = customer;
-
+/*
 if (fooditem==1){
   var minutes = 4;
   var seconds = 59;
@@ -39,4 +39,4 @@ var x = setInterval(function() {
 
   }
   
-}, 1000);
+}, 1000);*/

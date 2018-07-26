@@ -89,14 +89,33 @@ else{
             <div class="row">
                 <h1>Greetings Mr. <span id=customer>test</span> !<h1>
                 <div class="col-md-4 col-md-push-7 phone-preview">
-                    <div class="iphone-mockup"><img id="image" src="assets/img/fried.png" class="device">
+                    <div class="iphone-mockup"><img id="image" class="device">
+                        <script>
+                            var meal = <?php echo json_encode($food); ?>;
+                            if (meal == 1) {
+                                document.getElementById("image").src = "assets/img/Riceandcurry.png";
+                            }
+                            if (meal == 2) {
+                                document.getElementById("image").src = "assets/img/fried.png";
+                            }
+                            if (meal == 3) {
+                                document.getElementById("image").src = "assets/img/fried.png";
+                            }
+                            if (meal == 4) {
+                                document.getElementById("image").src = "assets/img/fried.png";
+                            }
+                            //document.getElementById("image").innerHTML = meal;
+                        </script>
+
                     </div>
+                   
+
+
                 </div>
                 <div class="col-md-6 col-md-pull-3 get-it">
-                    <h1>Your food will arrive within </h1>
-                    <p id="countdown">Estimating</p>
+                    <h1>Your food will arrive shortly </h1>
                     <p>
-                        <a id="btn1" class="btn btn-primary btn-lg" role="button" onclick="test()"> Food recieved </a>
+                        
                         
                         <a id="btn2" class="btn btn-success btn-lg" role="button" onclick="mediaplay()">Play / Pause music</a>
                         <!--<a id="btn3" class="btn btn-primary btn-lg" role="button" href="#">Go to Home </a> -->
@@ -106,8 +125,8 @@ else{
                 <div class="col-md-12">
                     <div>
     <audio autoplay id="song"> 
-        <source src="http://localhost/web/templateweb/startbootstrap-heroic-features/order-page/wait_page/assets/img/test.mp3" type="audio/mpeg" >
-        test1</audio>
+        <source src="http://localhost\Food Delivery System Web\src\pages\wait_page\assets\img\Inthemirror.mp3" type="audio/mpeg" >
+        </audio>
 </div>
                 </div>
             </div>
@@ -118,7 +137,7 @@ else{
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <h5>Team GHOST © 2016</h5></div>
+                    <h5>Team GHOST © 2018</h5></div>
                 <div class="col-sm-6 social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
             </div>
         </div>

@@ -149,8 +149,8 @@ if(isset($_GET["deliverylist"])){
         array_push($robotDeliveryQueue,$value['tableno']);  //push the table number of the element to the robotDeliveryQueue
         global $deliveringIDs;
         array_push($deliveringIDs,$value['id']);
-        echo "delivering IDS are ";
-        print_r($deliveringIDs);
+        /*echo "delivering IDS are\n ";
+        print_r($deliveringIDs);*/
         $removingElementKey=searchForId($value['id'],$toDeliver);
 
         //echo "removing".$removingElementKey."from robotDeliverQueue" ;
@@ -178,7 +178,8 @@ if(isset($_GET["deliverylist"])){
 if(isset($_GET["delivered"])){
     global $deliveringIDs;
     if(!empty($deliveringIDs)){
-        
+        echo "food delivered to";
+        print_r($deliveringIDs);
         foreach($deliveringIDs as $value){
 
             $id=mysql_real_escape_string($value['id']);
@@ -197,11 +198,11 @@ if(isset($_GET["delivered"])){
             $removingElementKey=searchForId($value['id'],$deliveringIDs);
             unset($deliveringIDs[$removingElementKey]);
         }
-        print_r($deliveringIDs);
+        
         exit();
     }
     else{
-        echo "null";
+        echo "";
         exit();
     }
 }

@@ -1,59 +1,62 @@
 
 $(document).ready(function () {
 
-    //Update the to cook list
-   for (const iterator of toCookarray) {
-      
-      var meal="";
-      if(iterator.food==1){
-        meal="Rice & Curry";
-      }
-      if(iterator.food==2){
-        meal="Fried Rice";
-      }
-      if(iterator.food==3){
-        meal="String Hoppers";
-      }
-      if(iterator.food==4){
-        meal="Hoppers";
-      }
-      var name= iterator.name;
-      var len = name.length;
-      while (len<25) {
-          
-          name = name+" ";
-          var len = name.length;
-      }
-      
-      
-       $(".cookList").append("<li><pre>" + iterator.id + "    " + name + " " + iterator.tableno + "          " + meal + "</pre></li>");
-    }
-   //Update the to deliver list
-    for (const iterator of toDeliverarray) {
-        var meal = "";
-        if (iterator.food == 1) {
-            meal = "Rice & Curry";
-        }
-        if (iterator.food == 2) {
-            meal = "Fried Rice";
-        }
-        if (iterator.food == 3) {
-            meal = "String Hoppers";
-        }
-        if (iterator.food == 4) {
-            meal = "Hoppers";
-        }
+    
 
-        var name = iterator.name;
+    console.log("refreshing");
+        //Update the to cook list
+    for (const iterator of toCookarray) {
+        
+        var meal="";
+        if(iterator.food==1){
+            meal="Rice & Curry";
+        }
+        if(iterator.food==2){
+            meal="Fried Rice";
+        }
+        if(iterator.food==3){
+            meal="String Hoppers";
+        }
+        if(iterator.food==4){
+            meal="Hoppers";
+        }
+        var name= iterator.name;
         var len = name.length;
-        while (len < 25) {
-
-            name = name + " ";
+        while (len<25) {
+            
+            name = name+" ";
             var len = name.length;
         }
-        $(".deliverList").append("<li><pre>" + iterator.id + "    " + name + " " + iterator.tableno + "          " + meal + "</pre></li>");
-    }
+        
+        
+        $(".cookList").append("<li><pre>" + iterator.id + "    " + name + " " + iterator.tableno + "          " + meal + "</pre></li>");
+        }
+    //Update the to deliver list
+        for (const iterator of toDeliverarray) {
+            var meal = "";
+            if (iterator.food == 1) {
+                meal = "Rice & Curry";
+            }
+            if (iterator.food == 2) {
+                meal = "Fried Rice";
+            }
+            if (iterator.food == 3) {
+                meal = "String Hoppers";
+            }
+            if (iterator.food == 4) {
+                meal = "Hoppers";
+            }
 
+            var name = iterator.name;
+            var len = name.length;
+            while (len < 25) {
+
+                name = name + " ";
+                var len = name.length;
+            }
+            $(".deliverList").append("<li><pre>" + iterator.id + "    " + name + " " + iterator.tableno + "          " + meal + "</pre></li>");
+        }
+    
     //Update css when list item of the to cook list is selected
     $(".cookList  li").click(function(){
         $(this).toggleClass("highlight");
@@ -88,7 +91,6 @@ $(document).ready(function () {
         $(".deliverList li").each(function(){
             $(".cookList").append("<li>" + $(this).html() + "</li>");
             $(this).remove();
-            
         });
         
     });
